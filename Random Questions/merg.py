@@ -1,45 +1,36 @@
-def mergeSort(arr, l, r):
+def mergeSort(arr):
+    n = len(arr)
     
-    if l < r:
-        m = (l+r)//2
+    if n <= 1:
+        return arr
     
-        mergeSort(arr, l, m)
-        mergeSort(arr, m+1, r)
+    m = n // 2
     
-        merge(arr, l, m, r)
+    L = arr[:m]
+    R = arr[m:]
     
-def merge(arr, l, m, r):
-    n1 = m-l+1
-    n2 = r - m
+    L = mergeSort(L)
+    R = mergeSort(R)
     
-    L = arr[l:m+1]
-    R = arr[m+1:r+1]
+    return merge(L, R)
+
+def merge(left, right):
+    new = []
     
     i = j = 0
-    k = l
-    
-    while i < n1 and j < n2:
-        if L[i] <= R[j]:
-            arr[k] = L[i]
+    while i < len(left) and j < len(right):
+        if left[i] < right[j]:
+            new.append(left[i])
             i += 1
         else:
-            arr[k] = R[j]
+            new.append(right[j]) 
             j += 1
-        k += 1
+            
+    new.extend(left[i:])
+    new.extend(right[j:])
         
-    while i < n1:
-        arr[k] = L[i]
-        i += 1
-        k += 1
-        
-    while j < n2:
-        arr[k] = R[j]
-        j += 1
-        k += 1
+    return new
     
+arr = [3, 1, 23, 0, 53, 0]
 
-arr = [38, 27, 43, 3, 9, 82, 10]
-n = len(arr)
-
-mergeSort(arr, 0, n - 1)
-print("Sorted array is:", arr)
+print(mergeSort(arr))
