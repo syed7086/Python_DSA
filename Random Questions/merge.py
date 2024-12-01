@@ -1,38 +1,25 @@
-def mergeSort(arr):
-    n = len(arr)
+def quickSort(arr, low, high):
+    if low < high:
+        pIndex = partition(arr, low, high)
+        
+        quickSort(arr, low, pIndex-1)
+        quickSort(arr, pIndex+1, high)
+        
+def partition(arr, low, high):
+    pivot = arr[low]
     
-    if n <= 1:
-        return arr
+    i = low + 1
+    j = high
     
-    m = n // 2
+    while True:
+        while i <= j and arr[i] <= pivot:
+            i += 1
+        while i <= j and arr[j] >= pivot:
+            j -= 1
+        if i <= j:
+            arr[i], arr[j] = arr[j], arr[i]
+        else: break
+        
+    arr[low], arr[j] = arr[j], arr[low]
     
-    L = arr[:m]
-    R = arr[m:]
-    
-    L = mergeSort(L)
-    R = mergeSort(R)
-    
-    return merge(L,R)
-
-def merge(left, right):
-    new = []
-    
-    i = j = 0
-    
-    while i < len(left) and j < len(right):
-        if left[i] < right[j]:
-            new.append(left[i])
-            i+=1
-        else:
-            new.append(right[j])
-            j+=1
-            
-    new.extend(left[i:])
-    new.extend(right[j:])
-    
-    return new
-
-
-arr = [64, 34, 25, 12, 22, 11, 90, 5]
-
-print(mergeSort(arr))
+    return j
