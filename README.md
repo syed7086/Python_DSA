@@ -1,6 +1,6 @@
 # Data Structures and Algorithms (DSA) in Python  
 ![](https://img.shields.io/badge/Status-Work_in_Progress-yellow)  
-![](https://img.shields.io/github/languages/top/your-username/repo-name)  
+![](https://img.shields.io/github/languages/top/syed7086/Python_DSA)  
 
 Welcome to my **Data Structures and Algorithms (DSA)** repository! This project is a collection of Python implementations of common data structures and algorithms. It serves as a study resource and a reference point for anyone interested in improving their understanding of DSA using Python.
 
