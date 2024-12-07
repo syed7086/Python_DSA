@@ -8,7 +8,8 @@ Welcome to my **Data Structures and Algorithms (DSA)** repository! This project 
 
 ## 📑 Table of Contents
 - [About](#about)
-- [Features](#features)
+- [Data Structures](#data-structures)
+- [Sorting Algorithms](#sorting-algorithms)
 - [Getting Started](#getting-started)
 - [License](#license)
 
@@ -22,12 +23,26 @@ This repository is an ongoing project where I practice and implement various **d
 
 ---
 
-## ✨ Features
-- Implementations of essential **data structures**:
-  - Arrays
 
-- Solutions to common **algorithmic problems**:
-  - Sorting and Searching
+## 🏗️ Data Structures  
+The repository currently includes implementations of the following data structures:  
+
+- **Arrays**  
+
+More data structures will be added as the repository evolves!  
+
+--- 
+
+## 🌀 Sorting Algorithms  
+The repository currently includes the following sorting algorithms:  
+
+- **Bubble Sort**  
+- **Selection Sort**  
+- **Insertion Sort**  
+- **Merge Sort**  
+- **Quick Sort** 
+
+More sorting algorithms will be added as the repository grows!  
 
 ---
 
